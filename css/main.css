@@ -2,7 +2,7 @@ section main {
   height: 100vh; }
 
 .menu-btn {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   right: 35px;
   top: 35px;
@@ -107,13 +107,13 @@ section main {
 body {
   background: #444444;
   color: #FFFFFF;
-  height: 100%;
   margin: 0;
   font-family: 'Lato', sans-serif;
   line-height: 1.5; }
   body#bg-img {
     background: url(../img/bg.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh; }
     body#bg-img:after {
       content: '';
@@ -123,7 +123,8 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background-color: rgba(68, 68, 68, 0.9); }
+      background-color: rgba(68, 68, 68, 0.9);
+      height: 117vh; }
 
 h1,
 h2,
@@ -159,13 +160,10 @@ header {
   color: #56AFE2;
   font-weight: 900; }
 
-.text-tertiary {
-  color: #EB9D0E;
-  font-weight: 900; }
-
 main {
+  height: 100%;
   padding: 4rem;
-  height: 100%; }
+  overflow: hidden; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -178,50 +176,63 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
-.about-info {
-  padding: 0 0.8rem;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: 'aboutimg bio bio' 'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
-  background: #444444; }
-  .about-info .about-img {
-    grid-area: aboutimg;
-    margin: auto;
-    border-radius: 50%;
-    border: #56AFE2 3px solid; }
-  .about-info img {
-    width: 60%; }
-  .about-info .bio {
-    grid-area: bio;
-    font-size: 1.5rem; }
-  .about-info .job1 {
-    grid-area: job1; }
-  .about-info .job2 {
-    grid-area: job2; }
-  .about-info .job3 {
-    grid-area: job3; }
-  .about-info .job {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: #56AFE2 5px solid; }
-    .about-info .job h3 {
-      font-size: 1.4rem;
-      font-weight: 700; }
-    .about-info .job h6 {
-      font-size: 1.2rem;
-      font-weight: 100; }
+#about {
+  background: #444444;
+  padding: 0;
+  padding: 4rem;
+  overflow: hidden; }
+  #about .lg-heading {
+    padding-bottom: 2rem; }
+  #about .about-info {
+    padding: 0 0.8rem;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'aboutimg bio bio' 'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr); }
+    #about .about-info .about-img {
+      grid-area: aboutimg;
+      margin: auto;
+      border-radius: 50%;
+      border: #56AFE2 3px solid; }
+    #about .about-info img {
+      width: 60%; }
+    #about .about-info .bio {
+      grid-area: bio;
+      font-size: 1.5rem; }
+    #about .about-info .job1 {
+      grid-area: job1; }
+    #about .about-info .job2 {
+      grid-area: job2; }
+    #about .about-info .job3 {
+      grid-area: job3; }
+    #about .about-info .job {
+      background: #414141;
+      padding: 0.5rem;
+      border-bottom: #56AFE2 5px solid; }
+      #about .about-info .job h3 {
+        font-size: 1.4rem;
+        font-weight: 700; }
+      #about .about-info .job h6 {
+        font-size: 1.2rem;
+        font-weight: 100; }
 
-.projects {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr); }
-  .projects img {
-    width: 100%;
-    border: 3px #FFFFFF solid; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #56AFE2; }
+#portfolio {
+  background: #A8A8A8;
+  padding: 0;
+  padding: 4rem;
+  overflow: hidden; }
+  #portfolio .lg-heading {
+    padding-bottom: 2rem; }
+  #portfolio .projects {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3 1fr); }
+    #portfolio .projects img {
+      width: 100%;
+      border: 3px #FFFFFF solid; }
+      #portfolio .projects img:hover {
+        opacity: 0.5;
+        border-color: #56AFE2; }
 
 .btn, .btn-dark, .btn-light {
   font-family: 'Lato', sans-serif;
@@ -231,7 +242,7 @@ main {
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #EB9D0E;
-    color: #000000; }
+    color: #242121; }
 
 .btn-dark {
   background: black;
@@ -240,6 +251,45 @@ main {
 .btn-light {
   background: #c4c4c4;
   color: #333333; }
+
+#contact {
+  background: #444444;
+  padding: 0;
+  padding: 4rem;
+  overflow: hidden; }
+  #contact h6 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #EB9D0E; }
+  #contact .form-control {
+    padding-bottom: 10px;
+    width: 100%;
+    margin: 20px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #FFFFFF;
+    color: #FFFFFF; }
+  #contact .buttonSubmit {
+    background-color: transparent;
+    padding: 0.9rem 2rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    margin: auto;
+    margin: 30px auto;
+    text-decoration: none;
+    display: block;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 1.2s, color 0.3s linear;
+    overflow: hidden;
+    transform: translateX(-40%) translateY(-60%);
+    border-radius: 5px; }
+    #contact .buttonSubmit:hover {
+      background-color: #56AFE2;
+      border: 2px double #FFFFFF; }
 
 @media screen and (min-width: 1170px) {
   .projects {
@@ -255,7 +305,8 @@ main {
     text-align: center; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 3rem; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -272,7 +323,9 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("");
+      background: url("../img/TCDev.gif") no-repeat;
+      background-size: 187%;
+      background-position: center center;
       width: 150px;
       height: 150px; }
   .about-info {
@@ -281,7 +334,23 @@ main {
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 540px) {
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 100; }
+    h1.lg-heading,
+    h2.lg-heading,
+    h3.lg-heading {
+      font-size: 3rem; }
+    h1.sm-heading,
+    h2.sm-heading,
+    h3.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.6rem;
+      background: rgba(73, 73, 73, 0); }
   main#home h1 {
     margin-top: 10vh; }
   .projects {
